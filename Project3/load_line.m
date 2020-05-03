@@ -1,7 +1,7 @@
 figure();
 mu_0=4*pi*1e-7;
-mu_r= mu_0*1.05;
-B_r= 1.28; % tesle
+mu_r= mu_0*16;
+B_r= 0.4; % tesle
 x=[-B_r/mu_r 0 ];
 y=[0 B_r];
 
@@ -12,7 +12,7 @@ hold on;
 plot([-12e+05 0], [0,0],'k','LineWidth',3)
 xlabel('Magnetic Field Strenght(A/m)');
 ylabel('Magnetic FLux Density(Tesla)');
-
+% 
 plot([0,-B_r/mu_r+1.0138/mu_r], [0 , 1.0138],'m','LineWidth',3)
 
 %%
@@ -26,3 +26,17 @@ max(B)
 ylabel('Flux Density (Tesla)');
 xlabel('Electical Angle(Degree)');
 set(gca,'FontSize',20)
+%%
+
+% plot(T.time,T.T2)
+time=T.time(40:96);
+Torque=T.T2(40:96);
+plot(time,Torque)
+
+%%
+
+plot(Volt)
+hold on; 
+plot(1000*Volt.*Cur)
+
+
